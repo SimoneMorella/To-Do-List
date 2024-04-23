@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+ /* * {
+    border: 1px solid red;
+}  */
+
+::backdrop {
+    opacity: 0.7;
+    backdrop-filter: blur(2px);
+}
+
+
+.inputBox {
+    position: relative;
+    width: 100%;
+}
+
+.inputBox input,
+.inputBox textarea {
+    display: block;
+    width: 100%;
+    transition: 0.4s ease;
+}
+
+.inputBox input:focus,
+.inputBox textarea:focus,
+.inputBox select:focus {
+    outline: none;
+    border: 1px solid #BDA46D;
+    border-radius: 6px;
+}
+
+.inputBox label {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    color: #05293D9d;
+    transition: 0.4s ease;
+}
+
+.inputBox label[for='date'],
+.inputBox label[for="completeTask"],
+.inputBox label[for='priority1'] {
+    transform: 
+    translateY(-22px)
+    scale(0.85);
+    background-color: #F5F1E9;
+    padding: 2px;
+}
+
+input:is(:focus, :valid, :disabled) ~ label,
+textarea:is(:focus, :valid, :disabled) ~ label {
+    transform: 
+        translateY(-22px)
+        scale(0.85);
+    background-color: #F5F1E9;
+    padding: 2px;
+}
+
+.complete {
+    border: 1px solid #4ade80;
+    background-color: #4ade80;
+    color: white;
+}
+

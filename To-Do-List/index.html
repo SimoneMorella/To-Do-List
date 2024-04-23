@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./src/glasses.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>To Cool List</title>
+  </head>
+  <body class="bg-bg-complementary h-svh text-glass-blue font-lobster flex flex-col">
+    <header class="flex justify-between w-full px-2 text-5xl shadow-glass-blue shadow-md">
+      <div class="flex items-center animate-spawnRight">
+        <span>To-C</span>
+        <img src="/src/glasses.svg" alt="glasses" class="w-20 relative top-1 hover:animate-coolRotation">
+        <span>l-List</span>
+      </div>
+      <div class="flex items-center text-3xl">
+        <i id="dropMenu" class='bx bx-menu'></i>
+      </div>
+    </header>
+    <div class="">
+      <aside class="p-2 animate-spawnRight hidden w-full rounded-lg bg-white bg-opacity-45 shadow-glass-blue shadow-md">
+        <div class="generic1 flex items-center gap-2 py-2 text-2xl"><i class='bx bxs-archive'></i> All tasks</div>
+        <div class="generic2 flex items-center gap-2 py-2 text-2xl"><i class='bx bxs-calendar-plus'></i> For Today</div>
+        <div class="generic3 flex items-center gap-2 py-2 text-2xl"><i class='bx bxs-badge-check' ></i> Task completed</div>
+        <div class="text-3xl mt-3">Projects:</div>
+        <div class="mx-2 mt-2">
+          <ul data-value="projects" class="text-xl capitalize flex flex-col gap-1">
+          </ul>
+        </div>
+        <form action="" data-project-form class="flex ml-2 mt-2 gap-2">
+          <input type="text" placeholder="New Project" data-name-input class="outline-none bg-transparent border-b border-glass-blue w-2/5">
+          <button type="submit" class="text-2xl bg-azure-comp px-3 group py-1 rounded-xl flex items-center"><i class='bx bx-plus-circle group-hover:animate-spin' ></i></button>
+        </form>
+      </aside>
+    </div>
+    
+    <main class="flex-grow">
+      <div data-todo-container class="mt-16 flex flex-col gap-2">
+        <div data-project-title class="bg-glass-blue text-alt-text mx-2 px-2 py-3 text-center text-3xl rounded-md">All Tasks</div>
+        <div data-todo-count></div>
+        <ul data-todo-table class="flex flex-col gap-2 px-2">
+        </ul>
+        <dialog data-dialog-insert-todo class="rounded-lg">
+          <div class="w-full h-full flex flex-col p-2  border-2 border-glass-blue rounded-lg bg-alt-text bg-opacity-15">
+            <button data-close class="self-end text-2xl hover:animate-spin"><i class='bx bx-x'></i></button>
+            <form action="" data-todo-form class="px-4 py-2 flex flex-col gap-3">
+              <div class="inputBox">
+                <input type="text" id="name" required data-todo-name-input class="border rounded-md text-glass-blue border-glass-blue p-2 pb-1 bg-transparent">
+                <label for="name">Name</label>
+              </div>
+              <div class="inputBox">
+                <select name="priority" id="priority" data-todo-priority-input required class="border rounded-md text-glass-blue border-glass-blue p-2 pb-1 w-full bg-transparent focus:outline-none">
+                  <option value="" disabled selected>Priority</option>
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                </select>
+              </div>
+              <div class="inputBox">
+                <input type="date" id="date" name="date" required data-todo-date-input class="border rounded-md text-glass-blue border-glass-blue p-2 pb-1 bg-transparent">
+                <label for="date">Due Date</label>
+              </div>
+              <div class="inputBox">
+                <textarea name="description" required id="description" cols="30" rows="4" data-todo-description-input
+                class="bg-transparent p-2 border border-glass-blue rounded-md"></textarea>
+                <label for="description">Description</label>
+              </div>
+              <button type="submit" class="text-3xl group bg-azure-comp self-center flex justify-center items-center py-2 w-28 rounded-xl"><i class='bx bx-plus-circle group-hover:animate-spin' ></i></button>
+            </form>
+          </div>
+        </dialog>
+      </div>
+      <dialog data-dialog-toDo class="rounded-lg">
+        <div class="w-full h-full flex flex-col p-2  border-2 border-glass-blue rounded-lg bg-alt-text bg-opacity-15">
+          <button data-close-dialog class="self-end text-2xl hover:animate-spin"><i class='bx bx-x'></i></button>
+          <form action="" data-edit-container class="px-4 py-2 flex flex-col gap-3">
+            <div class="inputBox">
+              <input type="text" id="name1" disabled data-todo-title class="border disabled:border-[#76878E] disabled:text-[#556C76] rounded-md text-glass-blue border-glass-blue p-2 pb-1 bg-transparent">
+              <label for="name1">Name</label>
+            </div>
+            <div class="inputBox">
+              <select name="complete" id="completeTask" disabled data-todo-complete class="border disabled:border-[#76878E] disabled:text-[#556C76] rounded-md text-glass-blue border-glass-blue p-2 pb-1 w-full bg-transparent focus:outline-none">
+                <option value="true">Complete</option>
+                <option value="false">Ongoing</option>
+              </select>
+              <label for="completeTask">Status</label>
+            </div>
+            <div class="inputBox">
+              <select name="priority" id="priority1" data-todo-priority disabled class="border disabled:border-[#76878E] disabled:text-[#556C76] rounded-md text-glass-blue border-glass-blue p-2 pb-1 w-full bg-transparent focus:outline-none">
+                <option value="" disabled selected>Priority</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+              </select>
+              <label for="priority1">Priority</label>
+            </div>
+            <div class="inputBox">
+              <input type="date" id="date1" name="date1" disabled data-todo-date class="border rounded-md disabled:border-[#76878E] disabled:text-[#556C76] text-glass-blue border-glass-blue p-2 pb-1 bg-transparent">
+              <label for="date1">Due Date</label>
+            </div>
+            <div class="inputBox">
+              <textarea name="description" disabled id="description1" cols="30" rows="4" data-todo-description
+              class="bg-transparent p-2 border border-glass-blue rounded-md disabled:border-[#76878E] disabled:text-[#556C76]"></textarea>
+              <label for="description1">Description</label>
+            </div>
+            <div class="flex gap-3 justify-center items-center">
+              <button type="button" data-start-edit class="text-3xl transition duration-150 hover:scale-105 hover:shadow-inner bg-azure-comp self-center flex justify-center items-center py-2 w-28 rounded-xl"><i class='bx bxs-edit' ></i></button>
+              <button type="submit" data-confirm-edit class="hidden text-2xl transition duration-150 hover:scale-105 hover:shadow-inner bg-azure-comp self-center justify-center items-center py-2 w-28 rounded-xl">Confirm</button>
+              <button type="button" data-cancel-edit class=" hidden text-2xl transition duration-150 hover:scale-105 hover:shadow-inner bg-azure-comp self-center justify-center items-center py-2 w-28 rounded-xl">Cancel</button>
+            </div>
+          </form>
+          
+        </div>
+      </dialog>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+ 
