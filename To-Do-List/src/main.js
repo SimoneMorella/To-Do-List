@@ -35,30 +35,42 @@ const completed = document.querySelector('.generic3');
 
 const STORAGE_PROJECT_KEY = 'projects.list';
 const SELECTED_PROJECT_ID_STORED_KEY = 'selected.project';
+const SELECTED_GENERAL_CATEGORY_ID_KEY = 'general category'
 
 let selectedProjectID = localStorage.getItem(SELECTED_PROJECT_ID_STORED_KEY) || null;
+let selectedGeneralID = localStorage.getItem(SELECTED_GENERAL_CATEGORY_ID_KEY) || null;
 let projectsList = JSON.parse(localStorage.getItem(STORAGE_PROJECT_KEY)) || [];
 
 // change the selectedProjectID for when I press one of these three
 // in order to not make the project highlights when the general category are considered
 allTasks.addEventListener('click', e => {
+    selectedGeneralID = 'EveryTasks';
+    selectedProjectID = null;
     clearBox(toDoList);
     displayStartingPage(projectsList, createToDoListItem);
+    saveAndRender();
 })
 
 forToday.addEventListener('click', e => {
+    selectedGeneralID = 'DueTodayTasks';
+    selectedProjectID = null;
     clearBox(toDoList);
     displayDueTodayToDo(projectsList, createToDoListItem);
+    saveAndRender();
 })
 
 completed.addEventListener('click', e => {
+    selectedGeneralID = 'AlreadyCompletedTasks';
+    selectedProjectID = null;
     clearBox(toDoList);
     displayCompletedTasks(projectsList, createToDoListItem);
+    saveAndRender();
 })
 
 
 projectBox.addEventListener('click', e => {
     if (e.target.tagName.toLowerCase() === 'li' || e.target.tagName.toLowerCase() === 'div') {
+        selectedGeneralID = null;
         selectedProjectID = e.target.dataset.projectID;
         saveAndRender();
  
@@ -137,21 +149,52 @@ function saveAndRender() {
 function save() {
     localStorage.setItem(STORAGE_PROJECT_KEY, JSON.stringify(projectsList));
     localStorage.setItem(SELECTED_PROJECT_ID_STORED_KEY, selectedProjectID);
+    localStorage.setItem(SELECTED_GENERAL_CATEGORY_ID_KEY, selectedGeneralID);
 }
 
 function render() {
     clearBox(projectBox);
     renderProjectList();
-    if (selectedProjectID === null || selectedProjectID === 'null') {
+    if ((selectedProjectID === null || selectedProjectID === 'null') && (selectedGeneralID === null || selectedGeneralID === 'null')) {
+        allTasks.classList.add('text-3xl', 'font-bold');
+        forToday.classList.remove('text-3xl', 'font-bold');
+        completed.classList.remove('text-3xl', 'font-bold');
         clearBox(toDoList);
         displayStartingPage(projectsList, createToDoListItem);
         return;
     }
-    else {
+    else if (selectedGeneralID === null || selectedGeneralID === 'null') {
+        allTasks.classList.remove('text-3xl', 'font-bold');
+        forToday.classList.remove('text-3xl', 'font-bold');
+        completed.classList.remove('text-3xl', 'font-bold');
         let selectedProject = projectsList.find(project => project.id === selectedProjectID);
         changeProjectTitle(selectedProject);
         clearBox(toDoList);
         renderToDos(selectedProject);
+    }
+
+    else if (selectedProjectID === null || selectedProjectID === 'null') {
+        if (selectedGeneralID === 'EveryTasks') {
+            allTasks.classList.add('text-3xl', 'font-bold');
+            forToday.classList.remove('text-3xl', 'font-bold');
+            completed.classList.remove('text-3xl', 'font-bold');
+            clearBox(toDoList);
+            displayStartingPage(projectsList, createToDoListItem);
+        }
+        if (selectedGeneralID === 'DueTodayTasks') {
+            allTasks.classList.remove('text-3xl', 'font-bold');
+            forToday.classList.add('text-3xl', 'font-bold');
+            completed.classList.remove('text-3xl', 'font-bold');
+            clearBox(toDoList);
+            displayDueTodayToDo(projectsList, createToDoListItem);
+        }
+        if (selectedGeneralID === 'AlreadyCompletedTasks') {
+            allTasks.classList.remove('text-3xl', 'font-bold');
+            forToday.classList.remove('text-3xl', 'font-bold');
+            completed.classList.add('text-3xl', 'font-bold');
+            clearBox(toDoList);
+            displayCompletedTasks(projectsList, createToDoListItem);
+        }
     }
 }
 

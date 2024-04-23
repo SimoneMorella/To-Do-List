@@ -200,13 +200,13 @@ export function displayStartingPage(projectList, renderTasks) {
 
 
     // update su cosa mi manca
-    // edit function FUNZIONA MA DEVO SISTEMARE PER IL SELECTPROJECTID DELLE 3 CATEGORIE GENERALI SISTEMATO
-    // ora mi manca solo fare il render che quando renderizzo torna nella categoria dove stava prima;
-    // non so esattamente come fare, pensavo di o fare qualcosa con localStorage ma non penso funzioni
-    // oppure fare semplicemente quando è la classe active è attiva allora boh
-    // mi leggo il codice di render per capire bene
+    // edit function FUNZIONA MA DEVO SISTEMARE PER IL SELECTPROJECTID DELLE 3 CATEGORIE GENERALI SISTEMATO FATTOOO
+    // ora mi manca solo fare il render che quando renderizzo torna nella categoria dove stava prima; FATTOOOO
+    // non so esattamente come fare, pensavo di o fare qualcosa con localStorage ma non penso funzioni FATTOOOO
+    // oppure fare semplicemente quando è la classe active è attiva allora boh FATTOOOOO
+    // mi leggo il codice di render per capire bene FATTOOOOOOO
     // visualize task frontend and edit da finire con i bottoni e il front-end dell'edit FUNZIONA
     // aggiungere footer
     // fare responsive design
-    // sistemare hover bottoni nell'aside per quando li seleziono qui devo mettere i selectprojectID anche ai primi 3 cosi i progetti non si selezionano
+    // sistemare hover bottoni nell'aside per quando li seleziono qui devo mettere i selectprojectID anche ai primi 3 cosi i progetti non si selezionano FATTOOOOO
     // animazione apertura dialog
