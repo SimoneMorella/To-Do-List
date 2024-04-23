@@ -206,7 +206,7 @@ export function displayStartingPage(projectList, renderTasks) {
     // oppure fare semplicemente quando è la classe active è attiva allora boh FATTOOOOO
     // mi leggo il codice di render per capire bene FATTOOOOOOO
     // visualize task frontend and edit da finire con i bottoni e il front-end dell'edit FUNZIONA
-    // aggiungere footer
+    // aggiungere footer FATTOOOOO
     // fare responsive design
     // sistemare hover bottoni nell'aside per quando li seleziono qui devo mettere i selectprojectID anche ai primi 3 cosi i progetti non si selezionano FATTOOOOO
     // animazione apertura dialog

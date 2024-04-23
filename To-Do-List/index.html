@@ -7,7 +7,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>To Cool List</title>
   </head>
-  <body class="bg-bg-complementary h-svh text-glass-blue font-lobster flex flex-col">
+  <body class="bg-bg-complementary h-svh text-glass-blue font-lobster flex flex-col justify-between">
     <header class="flex justify-between w-full px-2 text-5xl shadow-glass-blue shadow-md">
       <div class="flex items-center animate-spawnRight">
         <span>To-C</span>
@@ -110,10 +110,16 @@
               <button type="button" data-cancel-edit class=" hidden text-2xl transition duration-150 hover:scale-105 hover:shadow-inner bg-azure-comp self-center justify-center items-center py-2 w-28 rounded-xl">Cancel</button>
             </div>
           </form>
-          
         </div>
       </dialog>
     </main>
+    <footer class="w-full flex justify-center items-center gap-1 text-sm font-semibold pb-1">
+      SimoneMorella
+      <a href="https://github.com/SimoneMorella" class="text-2xl transform hover:rotate-45 transition ease-out duration-300"><i class='bx bxl-github' id="gitico"></i></a>
+      <script>
+          document.write(new Date().getFullYear())
+      </script>
+  </footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
