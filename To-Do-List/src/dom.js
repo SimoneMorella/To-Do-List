@@ -135,6 +135,8 @@ export function displayStartingPage(projectList, renderTasks) {
         let selectedToDo = toDoList.find(toDo => toDo.id === toDoItemID);
         console.log(selectedToDo);
         editContainer.dataset.ToDoID = toDoItemID;
+        editContainer.dataset.ProjectID = selectedToDo.projectID;
+        console.log(editContainer.dataset.ProjectID)
         let dateObject = parse(selectedToDo.dueDate, 'dd MMMM yyyy', new Date());
         dialogToDoTitle.value = selectedToDo.name;
         dialogToDoDescrip.value = selectedToDo.description;
@@ -198,7 +200,11 @@ export function displayStartingPage(projectList, renderTasks) {
 
 
     // update su cosa mi manca
-    // edit function FUNZIONA MA DEVO SISTEMARE PER IL SELECTPROJECTID DELLE 3 CATEGORIE GENERALI
+    // edit function FUNZIONA MA DEVO SISTEMARE PER IL SELECTPROJECTID DELLE 3 CATEGORIE GENERALI SISTEMATO
+    // ora mi manca solo fare il render che quando renderizzo torna nella categoria dove stava prima;
+    // non so esattamente come fare, pensavo di o fare qualcosa con localStorage ma non penso funzioni
+    // oppure fare semplicemente quando è la classe active è attiva allora boh
+    // mi leggo il codice di render per capire bene
     // visualize task frontend and edit da finire con i bottoni e il front-end dell'edit FUNZIONA
     // aggiungere footer
     // fare responsive design

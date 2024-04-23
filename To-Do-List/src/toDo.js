@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 export class ToDo {
     constructor(name) {
         this.id = Date.now().toString();
+        this.projectID = null;
         this.name = name;
         this.priority = null;
         this.complete = false;
@@ -29,6 +30,10 @@ export class ToDo {
 
     setToOnGoing() {
         this.complete = false;
+    }
+
+    setProjectID(givenID) {
+        this.projectID = givenID; 
     }
 
 }

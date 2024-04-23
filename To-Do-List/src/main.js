@@ -78,15 +78,15 @@ projectForm.addEventListener('submit', e => {
 toDoForm.addEventListener('submit', e => {
     e.preventDefault();
     // here create a function to actually create the ToDoS then return the toDo in createdToDo
-    let createdToDo = createToDo();
     let selectedProject = projectsList.find(project => project.id === selectedProjectID);
     Object.setPrototypeOf(selectedProject, Project.prototype);
+    let createdToDo = createToDo(selectedProject.id);
     selectedProject.addToDo(createdToDo);
     dialogInsertTask.close();
     saveAndRender();
 })
 
-function createToDo() {
+function createToDo(projectID) {
     let toDoName = toDoNameInput.value;
     let toDoPriority = toDoPriorityInput.value;
     let toDoDescription = toDoDescriptionInput.value;
@@ -99,6 +99,7 @@ function createToDo() {
     toDo.setDescription(toDoDescription);
     toDo.setPriority(toDoPriority);
     toDo.setDueDate(toDoDate);
+    toDo.setProjectID(projectID);
 
     toDoNameInput.value = null;
     toDoPriorityInput.value = null;
@@ -121,6 +122,7 @@ function deleteProject(button) {
     button.addEventListener('click', e => {
         e.stopPropagation();
         projectsList = projectsList.filter((project) => project.id !== selectedProjectID);
+        // qui cambiare per allTasks?
         selectedProjectID = null;
         saveAndRender();
     })
@@ -280,7 +282,8 @@ function openToDoBox(toDoBox, taskList) {
 
 editContainer.addEventListener('submit', e => {
     e.preventDefault();
-    let selectedProject = projectsList.find(project => project.id === selectedProjectID);
+    console.log(editContainer);
+    let selectedProject = projectsList.find(project => project.id === editContainer.dataset.ProjectID);
     Object.setPrototypeOf(selectedProject, Project.prototype);
     editTask(editContainer.dataset.ToDoID, selectedProject.toDo);
     saveAndRender();
