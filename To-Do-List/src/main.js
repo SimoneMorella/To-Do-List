@@ -156,17 +156,17 @@ function render() {
     clearBox(projectBox);
     renderProjectList();
     if ((selectedProjectID === null || selectedProjectID === 'null') && (selectedGeneralID === null || selectedGeneralID === 'null')) {
-        allTasks.classList.add('text-3xl', 'font-bold');
-        forToday.classList.remove('text-3xl', 'font-bold');
-        completed.classList.remove('text-3xl', 'font-bold');
+        allTasks.classList.add('font-bold');
+        forToday.classList.remove('font-bold');
+        completed.classList.remove('font-bold');
         clearBox(toDoList);
         displayStartingPage(projectsList, createToDoListItem);
         return;
     }
     else if (selectedGeneralID === null || selectedGeneralID === 'null') {
-        allTasks.classList.remove('text-3xl', 'font-bold');
-        forToday.classList.remove('text-3xl', 'font-bold');
-        completed.classList.remove('text-3xl', 'font-bold');
+        allTasks.classList.remove('font-bold');
+        forToday.classList.remove('font-bold');
+        completed.classList.remove('font-bold');
         let selectedProject = projectsList.find(project => project.id === selectedProjectID);
         changeProjectTitle(selectedProject);
         clearBox(toDoList);
@@ -175,23 +175,23 @@ function render() {
 
     else if (selectedProjectID === null || selectedProjectID === 'null') {
         if (selectedGeneralID === 'EveryTasks') {
-            allTasks.classList.add('text-3xl', 'font-bold');
-            forToday.classList.remove('text-3xl', 'font-bold');
-            completed.classList.remove('text-3xl', 'font-bold');
+            allTasks.classList.add('font-bold');
+            forToday.classList.remove('font-bold');
+            completed.classList.remove('font-bold');
             clearBox(toDoList);
             displayStartingPage(projectsList, createToDoListItem);
         }
         if (selectedGeneralID === 'DueTodayTasks') {
-            allTasks.classList.remove('text-3xl', 'font-bold');
-            forToday.classList.add('text-3xl', 'font-bold');
-            completed.classList.remove('text-3xl', 'font-bold');
+            allTasks.classList.remove('font-bold');
+            forToday.classList.add('font-bold');
+            completed.classList.remove('font-bold');
             clearBox(toDoList);
             displayDueTodayToDo(projectsList, createToDoListItem);
         }
         if (selectedGeneralID === 'AlreadyCompletedTasks') {
-            allTasks.classList.remove('text-3xl', 'font-bold');
-            forToday.classList.remove('text-3xl', 'font-bold');
-            completed.classList.add('text-3xl', 'font-bold');
+            allTasks.classList.remove('font-bold');
+            forToday.classList.remove('font-bold');
+            completed.classList.add('font-bold');
             clearBox(toDoList);
             displayCompletedTasks(projectsList, createToDoListItem);
         }
@@ -349,7 +349,7 @@ function renderProjectList() {
         projectEleBox.classList.add('flex', 'gap-2', 'text-xl')
         projectEleBox.dataset.projectID = project.id;
         projectEle.dataset.projectID = project.id;
-        projectEle.classList.add('flex', 'justify-between', 'items-center', 'group', 'rounded-lg', 'hover:bg-[#E0E0E0]', 'px-1');
+        projectEle.classList.add('flex', 'justify-between', 'items-center', 'group', 'rounded-lg', 'hover:bg-[#E0E0E0]', 'px-1', 'lg:py-1', 'cursor-pointer');
         projectEle.append(projectEleBox);
         if (project.id === selectedProjectID) {
             projectEle.classList.add('font-bold');
