@@ -125,7 +125,7 @@ function createToDo(projectID) {
 function createDeleteProjectBtn(selectedProject) {
     let deleteBtn = document.createElement('button');
     deleteBtn.innerHTML = "<i class='bx bx-x'></i>";
-    deleteBtn.classList.add('flex', 'items-center', 'hover:animate-spin', 'text-xl', 'mr-10');
+    deleteBtn.classList.add('flex', 'items-center', 'hover:animate-spin', 'text-xl', 'mr-10' ,'lg:mr-3');
     selectedProject.append(deleteBtn);
     deleteProject(deleteBtn);
 }
