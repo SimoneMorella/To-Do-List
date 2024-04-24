@@ -219,7 +219,8 @@ function createToDoListItem(toDo, tasksList) {
     // function for changing the complete attribute to the toDo
     completeTask(toDo, completedCheck, toDoNameBox);
     toDoEle.dataset.toDoID = toDo.id;
-    toDoEle.classList.add('flex', 'justify-between','bg-[#8ED1DC01]', 'items-center', 'shadow-glass-blue', 'shadow-sm', 'rounded-lg', 'py-1', 'px-3');
+    toDoEle.dataset.projectID = toDo.projectID;
+    toDoEle.classList.add('flex', 'justify-between','bg-[#8ED1DC01]', 'items-center', 'cursor-pointer', 'shadow-glass-blue', 'shadow-sm', 'rounded-lg', 'py-1', 'px-3');
     toDoNameBox.textContent = toDo.name;
     nameNCompleted.classList.add('flex', 'items-center', 'gap-2')
     toDoEleBox.classList.add('text-lg', 'flex', 'justify-between', 'capitalize', 'w-11/12');
@@ -286,6 +287,7 @@ function changePriorityColor(priorityCircle, toDo) {
 
 function createToDoDeleteBtn(toDoBox) {
     const deleteBtn = document.createElement('button');
+    deleteBtn.dataset.projectID = toDoBox.dataset.projectID;
     deleteBtn.innerHTML = "<i class='bx bx-x hover:animate-spin'></i>";
     deleteBtn.classList.add('text-black', 'text-xl', 'flex', 'items-center');
     toDoBox.append(deleteBtn);
@@ -296,7 +298,7 @@ function createToDoDeleteBtn(toDoBox) {
 function deleteToDo(button, toDoID) {
     button.addEventListener('click', e => {
         e.stopPropagation();
-        let selectedProject = projectsList.find(project => project.id === selectedProjectID);
+        let selectedProject = projectsList.find(project => project.id === button.dataset.projectID);
         Object.setPrototypeOf(selectedProject, Project.prototype);
         selectedProject.removeToDo(toDoID);
         saveAndRender();

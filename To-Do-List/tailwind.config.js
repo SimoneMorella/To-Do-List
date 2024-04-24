@@ -39,6 +39,9 @@ export default {
         coolRotation: 'coolRotation 0.7s ease-in-out',
         spawnScale: 'spawnScaling 0.3s ease-in-out',
       },
+      boxShadow: {
+        'asideRight': '8px 0px 8px -7px #05293D',
+      }
     },
     fontFamily: {
       'lobster': ['Lobster', 'system-ui'],
