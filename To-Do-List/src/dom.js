@@ -116,7 +116,7 @@ export function displayStartingPage(projectList, renderTasks) {
         btnBox.classList.add('flex', 'justify-center', 'items-center', 'btnBox');
         const insertBtn = document.createElement('button');
         insertBtn.textContent = 'Add Task';
-        insertBtn.classList.add('text-xl', 'px-5', 'py-3', 'rounded-xl', 'bg-glass-blue', 'text-alt-text', 'mt-4', 'border-2', 'border-glass-blue', 'transform','transition-all', 'duration-150', 'hover:scale-105');
+        insertBtn.classList.add('text-xl', 'px-5', 'py-3', 'rounded-xl', 'bg-glass-blue', 'text-main-bg', 'mt-4', 'border-2', 'border-glass-blue', 'transform','transition-all', 'duration-150', 'hover:scale-105');
         insertBtn.addEventListener('click', e => {
             dialogInsertTask.showModal();
         })
@@ -208,5 +208,5 @@ export function displayStartingPage(projectList, renderTasks) {
     // visualize task frontend and edit da finire con i bottoni e il front-end dell'edit FUNZIONA
     // aggiungere footer FATTOOOOO
     // fare responsive design
-    // sistemare hover bottoni nell'aside per quando li seleziono qui devo mettere i selectprojectID anche ai primi 3 cosi i progetti non si selezionano FATTOOOOO
-    // animazione apertura dialog
+    // sistemare hover bottoni nell'aside per quando li seleziono qui devo mettere i selectprojectID anche ai primi 3 cosi i progetti non si selezionano FATTOOOOO x2
+    // animazione apertura dialog FATTOOOO

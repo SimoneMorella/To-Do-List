@@ -7,8 +7,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>To Cool List</title>
   </head>
-  <body class="bg-bg-complementary h-svh text-glass-blue font-lobster flex flex-col justify-between">
-    <header class="flex justify-between w-full px-2 text-5xl shadow-glass-blue shadow-md">
+  <body class="bg-main-bg h-svh text-glass-blue font-lobster flex flex-col justify-between">
+    <header class="bg-orange-300 bg-opacity-10 flex justify-between w-full px-2 text-5xl shadow-glass-blue shadow-md">
       <div class="flex items-center animate-spawnRight">
         <span>To-C</span>
         <img src="/src/glasses.svg" alt="glasses" class="w-20 relative top-1 hover:animate-coolRotation">
@@ -19,11 +19,11 @@
       </div>
     </header>
     <div class="">
-      <aside class="p-2 animate-spawnRight hidden w-full rounded-lg bg-white bg-opacity-45 shadow-glass-blue shadow-md">
-        <div class="generic1 flex items-center gap-2 py-2 text-2xl"><i class='bx bxs-archive'></i> All tasks</div>
-        <div class="generic2 flex items-center gap-2 py-2 text-2xl"><i class='bx bxs-calendar-plus'></i> For Today</div>
-        <div class="generic3 flex items-center gap-2 py-2 text-2xl"><i class='bx bxs-badge-check' ></i> Task completed</div>
-        <div class="text-3xl mt-3">Projects:</div>
+      <aside class="p-2 animate-spawnRight hidden w-full rounded-lg bg-white bg-opacity-20 shadow-glass-blue shadow-md">
+        <div class="generic1 flex items-center gap-2 p-2 text-2xl rounded-lg hover:bg-[#E0E0E0]"><i class='bx bxs-archive'></i> All tasks</div>
+        <div class="generic2 flex items-center gap-2 p-2 text-2xl rounded-lg hover:bg-[#E0E0E0]"><i class='bx bxs-calendar-plus'></i> For Today</div>
+        <div class="generic3 flex items-center gap-2 p-2 text-2xl rounded-lg hover:bg-[#E0E0E0]"><i class='bx bxs-badge-check' ></i> Task completed</div>
+        <div class="text-3xl px-2 mt-3">Projects:</div>
         <div class="mx-2 mt-2">
           <ul data-value="projects" class="text-xl capitalize flex flex-col gap-1">
           </ul>
@@ -37,12 +37,12 @@
     
     <main class="flex-grow">
       <div data-todo-container class="mt-16 flex flex-col gap-2">
-        <div data-project-title class="bg-glass-blue text-alt-text mx-2 px-2 py-3 text-center text-3xl rounded-md">All Tasks</div>
+        <div data-project-title class="bg-glass-blue text-main-bg mx-2 px-2 py-3 text-center text-3xl rounded-md">All Tasks</div>
         <div data-todo-count></div>
         <ul data-todo-table class="flex flex-col gap-2 px-2">
         </ul>
-        <dialog data-dialog-insert-todo class="rounded-lg">
-          <div class="w-full h-full flex flex-col p-2  border-2 border-glass-blue rounded-lg bg-alt-text bg-opacity-15">
+        <dialog data-dialog-insert-todo class="rounded-lg animate-spawnScale">
+          <div class="w-full h-full flex flex-col p-2  border-2 border-glass-blue rounded-lg bg-main-bg bg-opacity-70">
             <button data-close class="self-end text-2xl hover:animate-spin"><i class='bx bx-x'></i></button>
             <form action="" data-todo-form class="px-4 py-2 flex flex-col gap-3">
               <div class="inputBox">
@@ -71,8 +71,8 @@
           </div>
         </dialog>
       </div>
-      <dialog data-dialog-toDo class="rounded-lg">
-        <div class="w-full h-full flex flex-col p-2  border-2 border-glass-blue rounded-lg bg-alt-text bg-opacity-15">
+      <dialog data-dialog-toDo class="rounded-lg animate-spawnScale">
+        <div class="w-full h-full flex flex-col p-2  border-2 border-glass-blue rounded-lg bg-main-bg bg-opacity-70">
           <button data-close-dialog class="self-end text-2xl hover:animate-spin"><i class='bx bx-x'></i></button>
           <form action="" data-edit-container class="px-4 py-2 flex flex-col gap-3">
             <div class="inputBox">
@@ -113,7 +113,7 @@
         </div>
       </dialog>
     </main>
-    <footer class="w-full flex justify-center items-center gap-1 text-sm font-semibold pb-1">
+    <footer class="w-full flex  justify-center items-center gap-1 text-sm font-semibold pb-1">
       SimoneMorella
       <a href="https://github.com/SimoneMorella" class="text-2xl transform hover:rotate-45 transition ease-out duration-300"><i class='bx bxl-github' id="gitico"></i></a>
       <script>

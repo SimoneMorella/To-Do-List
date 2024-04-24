@@ -219,7 +219,7 @@ function createToDoListItem(toDo, tasksList) {
     // function for changing the complete attribute to the toDo
     completeTask(toDo, completedCheck, toDoNameBox);
     toDoEle.dataset.toDoID = toDo.id;
-    toDoEle.classList.add('flex', 'justify-between', 'items-center', 'shadow-glass-blue', 'shadow-sm', 'rounded-lg', 'py-1', 'px-3');
+    toDoEle.classList.add('flex', 'justify-between','bg-[#8ED1DC01]', 'items-center', 'shadow-glass-blue', 'shadow-sm', 'rounded-lg', 'py-1', 'px-3');
     toDoNameBox.textContent = toDo.name;
     nameNCompleted.classList.add('flex', 'items-center', 'gap-2')
     toDoEleBox.classList.add('text-lg', 'flex', 'justify-between', 'capitalize', 'w-11/12');
@@ -349,7 +349,7 @@ function renderProjectList() {
         projectEleBox.classList.add('flex', 'gap-2', 'text-xl')
         projectEleBox.dataset.projectID = project.id;
         projectEle.dataset.projectID = project.id;
-        projectEle.classList.add('flex', 'justify-between', 'items-center', 'group');
+        projectEle.classList.add('flex', 'justify-between', 'items-center', 'group', 'rounded-lg', 'hover:bg-[#E0E0E0]', 'px-1');
         projectEle.append(projectEleBox);
         if (project.id === selectedProjectID) {
             projectEle.classList.add('font-bold');
